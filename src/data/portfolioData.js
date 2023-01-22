@@ -6,7 +6,7 @@ export const portfolioData = [
     languagesIcons: ['fab fa-js','fa fa-react', 'fab fa-css3-alt'],
     source: 'https://github.com/JustVNRR/resume.git',
     info: 'Le présent cv.',
-    picture: './resume/media/react-cv.jpg'
+    picture: './media/react-cv.jpg'
   },
   {
     id: 2,
