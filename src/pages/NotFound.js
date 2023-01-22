@@ -7,7 +7,7 @@ const NotFound = () => {
             <div className="notFoundContent">
                 <div className="wrapper">
                 <h3>4</h3>
-                <NavLink exact to="/resume/">
+                <NavLink exact to="/">
                     <i className="fas fa-home"></i>
                 </NavLink>
                 <h3>4</h3>
