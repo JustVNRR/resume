@@ -22,7 +22,7 @@ const Navigation = () => {
         <div className="sidebar">
             <div className="id">
                 <div className="idContent">
-                <NavLink exact="true" to="/" activeclassname="navActive">
+                <NavLink exact="true" to="/resume" activeclassname="navActive">
                     <div className="avatar"></div>
                 </NavLink>
                 </div>
@@ -31,32 +31,32 @@ const Navigation = () => {
             <div className="navigation">
                 <ul>
                     <li>
-                        <NavLink exact="true" to="/" activeclassname="navActive">
+                        <NavLink exact="true" to="/resume" activeclassname="navActive">
                             <i className="fas fa-home"></i>
                             <span>Accueil</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink exact="true" to="/competences" activeclassname="navActive">
+                        <NavLink exact="true" to="/resume/competences" activeclassname="navActive">
                         <i className="fa fa-cogs" aria-hidden="true"></i>
                             <span>Compétences</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink exact="true" to="/portfolio" activeclassname="navActive">
+                        <NavLink exact="true" to="/resume/portfolio" activeclassname="navActive">
           
                             <i className="fas fa-images"></i>
                             <span>Portfolio</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink exact="true" to="/references" activeclassname="navActive">
+                        <NavLink exact="true" to="/resume/references" activeclassname="navActive">
                             <i className="fas fa-comments"></i>
                             <span>Témoignages</span>
                         </NavLink>
                     </li>
                     <li className="networks-link">
-                        <NavLink exact="true" to="/networks" activeclassname="navActive">
+                        <NavLink exact="true" to="/resume/networks" activeclassname="navActive">
                         <i class="fas fa-network-wired"></i>
                             <span>Réseaux</span>
                         </NavLink>

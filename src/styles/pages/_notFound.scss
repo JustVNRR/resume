@@ -45,6 +45,10 @@
 
     .wrapper{
       display:flex;
+      :hover{
+        background:none;
+        transform: scale(1.05);
+      }
     }
   }
  
