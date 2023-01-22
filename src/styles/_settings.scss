@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Josefin+Sans:wght@100&family=Nova+Round&display=swap');
+@import url('https://fonts.cdnfonts.com/css/common-pixel');
+@import url('https://fonts.cdnfonts.com/css/public-pixel');
+
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file+'.woff') format('woff'),
+         url($font-file+'.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@include font('pixel', '../media/pixel');
+
+$font-1: 'Nova Round', cursive;
+$font-2: 'Dosis', sans-serif;
+$font-3: 'Josefin Sans', serif;
+$font-4: 'pixel', sans-serif;
+
+$color-1: rgb(22, 21, 21);
+$color-2: rgb(22, 21, 21);
+$color-3: #45ea36;
+$color-4: #45ea36;
+$color-5: #45ea36;
+$color-6: rgba(0,255,0,0.35);
+$color-7: rgba(0,255,0,0.55);
+$white: #ddd;
+$black: rgb(29, 29, 29);
+
+$borderRadius: 25px;
+$shadow: 0px 0px 5px $color-3;
+$minHeight: 95vh;
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-color: #0F0 grey;
+  scrollbar-width:none;
+}
+
+body {
+  margin: 1rem;
+  font-family: $font-1;
+  color: $black;
+  background: $black;
+
+  #root{
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+button {
+  cursor: pointer;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
+}
+a:visited {
+  color:$black;
+}
+.home, .knowledges, .portfolio, .contact, .references, .networks {
+  display: flex;
+
+  @media (max-aspect-ratio: 4/3) {
+    display: block !important;
+  }
+}

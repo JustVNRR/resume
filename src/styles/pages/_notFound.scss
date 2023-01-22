@@ -1,0 +1,51 @@
+.notFound {
+  border-radius: $borderRadius;
+  box-shadow: $shadow;
+  margin:1rem;
+
+  h3 {
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    color:$color-3;
+  }
+  a {
+    color: $color-5;
+    transition: .2s;
+    font-size: 4rem;
+
+    &:hover {
+      background: $color-4;
+    }
+  }
+
+  .notFoundContent{
+    @include verticalCenter;
+
+    background: linear-gradient(115deg, $color-1 50%, rgba(0,255,0, 0.25) 100%);
+    min-height: $minHeight;
+    width: 100%;
+    border-radius: $borderRadius;
+    position: relative;
+    overflow: hidden;
+    box-shadow: $shadow;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: inherit;
+      background: url('../../media/lost-highway.jpg') no-repeat center/cover;
+      z-index: -1;
+      filter: brightness(50%);
+      position:absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width:100%;
+    }
+
+    .wrapper{
+      display:flex;
+    }
+  }
+ 
+}
