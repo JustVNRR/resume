@@ -8,11 +8,13 @@ class Testimonial extends Component {
 
         return (
             <div className="testimonial">
+                <div className="wrapper">
                 <p>{text}</p>
                 <ul>
                     <li>{prenom}, {date} ({formation})</li>
                 </ul>
-            </div>
+                </div>
+                </div>
         );
     }
 }
