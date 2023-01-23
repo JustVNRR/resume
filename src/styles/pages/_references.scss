@@ -64,6 +64,16 @@ ul {
         scrollbar-width:thin;
         padding:1rem;
       }
+
+      .wrapper::-webkit-scrollbar {
+        width: 0.5rem;;
+        background-color: $black; /* or add it to the track */
+      }
+
+      .wrapper::-webkit-scrollbar-thumb {
+        background: $color-3;
+    }
+
       }
       }
 
