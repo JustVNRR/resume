@@ -168,7 +168,7 @@ export const testimonialData = [
     date:'18/11/2022',
     affiche:'oui',
     langage:'c#',
-    text: 'a passé une demi-heure à répondre à plusieurs de mes questions sur la pause du midi. Excusez-moi encore et merci beaucoup pour votre disponibilité.'
+    text: '[Le formateur] a passé une demi-heure à répondre à plusieurs de mes questions sur la pause du midi. Excusez-moi encore et merci beaucoup pour votre disponibilité.'
   },
   {
     id: 20,
