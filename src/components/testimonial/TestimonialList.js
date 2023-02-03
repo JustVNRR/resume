@@ -6,15 +6,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Controller, Thumbs } from 'swiper';
 import 'swiper/swiper-bundle.css';
 
-
-
-
-
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
 
 class TestimonialList extends Component {
 
-    
     state = {
         testimonials: testimonialData,
         // radios: [

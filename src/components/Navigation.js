@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 const Navigation = () => {
 
-
     useEffect(() => {
         window.addEventListener('scroll', isSticky);
         return () => {
@@ -10,7 +9,6 @@ const Navigation = () => {
         };
     });
 
-    /* Method that will fix header after a specific scrollable */
     const isSticky = (e) => {
         const header = document.querySelector('.sidebar');
         const scrollTop = window.scrollY;
@@ -57,7 +55,7 @@ const Navigation = () => {
                     </li>
                     <li className="networks-link">
                         <NavLink exact="true" to="/networks" activeclassname="navActive">
-                        <i class="fas fa-network-wired"></i>
+                        <i className="fas fa-network-wired"></i>
                             <span>Réseaux</span>
                         </NavLink>
                     </li>
@@ -81,9 +79,9 @@ const Navigation = () => {
                     <li>
                         <a href="https://twitter.com/lionel_bos" target="_blank" rel="noreferrer"><i className="fab fa-twitter" /></a>
                     </li>
-                    {/* <li>
-                        <a href="https://google.com" target="_blank" rel="noreferrer"><i className="fab fa-codepen" /></a>
-                    </li> */}
+                    <li>
+                        <a href="https://codepen.io/JustVNRR/pens/public" target="_blank" rel="noreferrer"><i className="fab fa-codepen" /></a>
+                    </li>
                 </ul>
                 <div className="signature">
                     <p>Just VNR - {new Date().getFullYear()}</p>

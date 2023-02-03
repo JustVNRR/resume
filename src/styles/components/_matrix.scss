@@ -1,0 +1,52 @@
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.points {
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    color: $color-3;
+    text-align: center;
+    text-shadow: 0px 0px 2px white;
+
+    .point {
+        user-select:none;
+        width: var(--w);
+        opacity: 0;
+        font-size: var(--fs);
+        transition: all 0.7s ease;
+        -webkit-transition: all 0.7s ease;
+        -moz-transition: all 0.7s ease;
+        -o-transition: all 0.7s ease;
+        -ms-transition: all 0.7s ease;
+
+        &.zoom {
+            width: calc(var(--fs) * 2);
+            text-shadow: 0px 0px 5px white;
+            animation-name: zoomed;
+            animation-duration: 0.8s;
+            animation-fill-mode: forwards;
+
+            @keyframes zoomed {
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(3);
+                }
+
+                100% {
+                    transform: scale(2);
+                }
+            }
+        }
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+}

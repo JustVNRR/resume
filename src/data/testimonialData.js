@@ -11,9 +11,9 @@ export const testimonialData = [
   {
     id: 2,
     formation: 'C# Initiation + Approfondissement',
-    prenom:'XXX',
-    date:'XXX',
-    affiche:'non',
+    prenom:'Evan',
+    date:'09/05/2022',
+    affiche:'oui',
     langage:'c#',
     text: 'Lionel est très sympathique et s\'adapte au rythme de chacun.'
   },
@@ -159,7 +159,7 @@ export const testimonialData = [
     date:'28/10/2022',
     affiche:'oui',
     langage:'sql',
-    text: 'Un grand merci à M. Bos, qui en plus d\'être un excellent pédagogue, possède des leviers pour rassurer quand la progression devient plus ardue... ; )'
+    text: 'Un grand merci à Lionel, qui en plus d\'être un excellent pédagogue, possède des leviers pour rassurer quand la progression devient plus ardue... ; )'
   },
   {
     id: 19,
