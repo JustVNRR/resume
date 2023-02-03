@@ -54,10 +54,11 @@
           transition: background-image 0.2s ease-in-out, transform 0.2s ease-in-out;
         }
 
-       
+
         &:hover:after {
           background: url('../../media/RESCUE.svg') no-repeat center/cover;
-          transform: scale(1.02); /* Equal to scaleX(0.7) scaleY(0.7) */
+          transform: scale(1.02);
+          /* Equal to scaleX(0.7) scaleY(0.7) */
         }
       }
 
@@ -247,4 +248,48 @@
       }
     }
   }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (min-aspect-ratio: 16/8) {
+
+  .sidebar {
+    min-width: auto;
+    display: flex;
+
+    .avatar,
+    .socialNetwork {
+      display: none !important;
+    }
+
+    .navigation {
+      width: 100%;
+      padding: .1rem 1rem;
+
+      ul {
+        li {
+          padding: 0;
+          display: flex;
+          align-items: center;
+
+          a {
+            i {
+              font-size: 2rem;
+            }
+          }
+
+          span {
+            display: none;
+          }
+
+          &.networks-link{
+            display:flex;
+          }
+        }
+
+
+      }
+    }
+  }
+
+
 }
