@@ -250,7 +250,16 @@
   }
 }
 
-@media only screen and (hover: none) and (pointer: coarse) and (min-aspect-ratio: 16/8) {
+// @media only screen and (min-aspect-ratio: 4/3) {
+//   .sidebar {
+//     grid-template-rows:auto
+//     .avatar {
+//       display: none !important;
+//     }
+//   }
+// }
+
+@media only screen and (min-aspect-ratio: 16/8) {
 
   .sidebar {
     min-width: auto;
@@ -281,8 +290,8 @@
             display: none;
           }
 
-          &.networks-link{
-            display:flex;
+          &.networks-link {
+            display: flex;
           }
         }
 
