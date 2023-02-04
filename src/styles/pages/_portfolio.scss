@@ -5,7 +5,7 @@
     min-height: $minHeight;
     grid-template-columns: 1fr;
     grid-template-rows: 4rem 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "1"
       "2";
   }
@@ -19,7 +19,7 @@
     background: $color-1;
     user-select: none;
     box-shadow: $shadow;
-    z-index:10;
+    z-index: 10;
 
     li {
       color: $color-3;
@@ -30,48 +30,52 @@
       z-index: 2;
       @include verticalCenter;
 
-      input[type="radio"]{
+      input[type="radio"] {
         visibility: hidden;
         position: relative;
+      }
 
-      }
-     
       label {
-        color:$color-6,
+        color: $color-6,
       }
-      input:checked + label {
-        color:$color-3,
+
+      input:checked+label {
+        color: $color-3,
       }
-      input:hover + label {
-        color:$color-3,
+
+      input:hover+label {
+        color: $color-3,
       }
+
       label {
         cursor: pointer;
       }
-      i{
-        font-size:2rem;
+
+      i {
+        font-size: 2rem;
       }
     }
   }
+
   .projects {
-    background: linear-gradient(135deg, $color-1 50%, rgba(0,255,0, 0.15) 90%);
+    background: linear-gradient(135deg, $color-1 50%, rgba(0, 255, 0, 0.15) 90%);
 
     grid-area: 2;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center; 
-    
+    align-items: center;
+
     height: calc(95vh - 5rem);
     width: calc(100% - 2rem);
 
-    overflow:auto;
+    overflow: auto;
     margin-top: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 0;
 
-    padding:2rem;
+    padding: 2rem;
     box-shadow: $shadow;
     border-radius: $borderRadius;
     background-color: $color-1;
@@ -85,18 +89,19 @@
       box-shadow: $shadow;
       display: grid;
       grid-template-rows: 15% 15% 55% 15%;
-      grid-template-areas: 
+      grid-template-areas:
         "1"
         "2"
         "3"
         "4";
-      width:20rem;
+      width: 20rem;
     }
+
     .icons {
       grid-area: 1;
       display: flex;
       justify-content: center;
-      margin-top:1rem;
+      margin-top: 1rem;
       @include verticalCenter;
 
       i {
@@ -106,17 +111,19 @@
         text-shadow: 0 0px 1px $color-1;
       }
     }
+
     h3 {
       grid-area: 2;
       font-family: $font-2;
       font-size: 1.35rem;
       justify-content: left;
-      color:$color-3;
+      color: $color-3;
       width: 100%;
       text-align: center;
-      line-height:3.5rem;
+      line-height: 3.5rem;
 
     }
+
     img {
       grid-area: 3;
       object-fit: cover;
@@ -126,11 +133,12 @@
       box-shadow: 0 2px 6px #333;
       border-radius: 4px;
 
-      margin-top:1rem;
-      margin-bottom:1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
       cursor: pointer;
       @include verticalCenter;
     }
+
     .infos {
       grid-area: 4;
       color: $color-4;
@@ -138,12 +146,13 @@
       font-size: 1.5rem;
       @include verticalCenter;
       transition: .2s;
-      margin-bottom:1rem;
+      margin-bottom: 1rem;
 
       &:hover {
         transform: scale(1.1);
       }
     }
+
     .showInfos {
       position: absolute;
       top: 0;
@@ -151,14 +160,14 @@
       bottom: 0;
       right: 0;
       background: rgba(0, 0, 0, 0.507);
-      animation: popup .3s ease forwards ;
+      animation: popup .3s ease forwards;
       transform-origin: center;
 
       .infosContent {
         position: relative;
         top: 25%;
         width: 600px;
-        max-width:90vw;
+        max-width: 90vw;
         margin: 0 auto;
         color: $color-5;
         background: $color-1;
@@ -168,30 +177,33 @@
         animation: popup .6s ease forwards;
         transform: scale(0);
         transform-origin: center;
-        box-shadow:  0px 0px 5px $color-3;
+        box-shadow: 0px 0px 5px $color-3;
 
         @keyframes popup {
           to {
             transform: scale(1);
-          } 
+          }
         }
       }
+
       .head {
         display: flex;
         justify-content: space-around;
         margin: 1rem 0;
       }
+
       h2 {
         text-align: left;
         margin-bottom: 1rem;
       }
 
-      ul{
-        display:flex;
+      ul {
+        display: flex;
         justify-content: space-around;
-        margin-top:1rem;
-        margin-bottom:1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
       }
+
       .button {
         cursor: pointer;
         color: $color-1;
@@ -204,6 +216,7 @@
           background: $color-4;
         }
       }
+
       .github {
         cursor: pointer;
         color: $color-1;
@@ -217,61 +230,70 @@
           background: $color-1;
         }
       }
+
       .text {
         text-align: justify;
         padding-bottom: 1rem;
         line-height: 1.5rem;
       }
+
       .return {
         margin: 1rem auto;
         width: 200px;
       }
     }
   }
+
   .projects::-webkit-scrollbar {
     width: 0;
     background: none;
   }
-
-  // .projects::-webkit-scrollbar-thumb {
-  //   -webkit-border-radius: 1ex;
-  //   background: $color-3;
-  // }
-
 }
 
-@media (max-aspect-ratio: 4/3)
- {
-  .radioDisplay {
-    box-shadow: none !important;
-    background: none!important;
-  }
+@media (max-aspect-ratio: 4/3) {
 
-  .projects{
-    height: calc(95vh - 8rem)!important;
-    // width: calc(100% - 2rem);
-    margin-bottom: 1rem!important;
-  }
 
   .portfolioContent {
 
-    min-height:80vh!important;
-    overflow:hidden!important;
+    min-height: calc(var(--vh) * 95 - var(--sh));
+    overflow: hidden !important;
+    padding-top: 1rem;
+
+    .radioDisplay {
+      box-shadow: none !important;
+      background: none !important;
+    }
+
+    .projects {
+      height: calc(var(--vh) * 95 - var(--sh) - 6rem);
+      margin-bottom: 1rem !important;
+    }
   }
-}
 
+  @media (max-width: 650px) {
 
-@media (max-aspect-ratio: 9/16)
- {
+    .portfolioContent {
+      display: flex !important;
   
+      .radioDisplay {
+        display: none !important;
+      }
+    }
+  
+    .projects {
+      height: calc(var(--vh) * 95 - var(--sh))!important;
+      width: 100% !important;
+      margin: 2px !important;
+      margin-bottom: 1rem !important;
+    }
+  }
+}
+
+@media (max-aspect-ratio: 9/16) {
+
   .portfolioContent {
 
-    grid-template-rows: 0 1fr!important;
+    grid-template-rows: 0 1fr !important;
   }
 }
 
-@media (max-width: 650px){
-  .radioDisplay {
-    display: none !important;
-  }
-}

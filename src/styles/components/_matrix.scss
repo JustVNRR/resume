@@ -14,7 +14,7 @@ canvas {
 
     .point {
         user-select:none;
-        width: var(--w);
+        width: var(--fs);
         opacity: 0;
         font-size: var(--fs);
         transition: all 0.7s ease;

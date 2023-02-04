@@ -1,7 +1,9 @@
 :root {
   --fs: 14px;
   --fm: $font-4;
-  --w: 14px;
+  --vh: 1vh;
+  --vw: 1vw;
+  --sh: 60px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Josefin+Sans:wght@100&family=Nova+Round&display=swap');
@@ -37,7 +39,8 @@ $black: rgb(29, 29, 29);
 
 $borderRadius: 25px;
 $shadow: 0px 0px 5px $color-3;
-$minHeight: 95vh;
+//$minHeight: calc(var(--vh) * 95 - var(--sh));
+$minHeight: calc(var(--vh) * 95);
 
 @mixin verticalCenter {
   display: flex;

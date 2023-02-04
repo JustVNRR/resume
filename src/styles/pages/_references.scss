@@ -1,167 +1,169 @@
 .references {
 
-.testimonialContent {
-background: linear-gradient(115deg, $color-1 50%, rgba(0,255,0, 0.25) 100%);
-min-height: $minHeight;
-width: 100%;
-border-radius: $borderRadius;
-position: relative;
-overflow: hidden;
-box-shadow: $shadow;
-@include verticalCenter;
-margin-left:1rem;
-
-&:after {
-  content: '';
-  height: 100%;
-  width: inherit;
-  background: url('../../media/lost-highway.jpg') no-repeat center/cover;
-  z-index: -1;
-  filter: brightness(50%);
-  position:absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width:100%;
-}
-
-.testimonial
-{
-  max-width: 75%;
-  max-height:100%;
-
-p{
-  color: $color-3;
-  max-width: 30rem;
-  line-height: 1.5rem;
-  white-space: pre-wrap;
-  white-space: pre-line;
-  text-align: justify;
-}
-
-ul {
-  padding-top:1rem;
-  color: $color-3;
-  text-align: right;
-  font-size: 0.7rem;
-}
-
-}
-
-.swiper {
-  width:95%;
-  height:25rem;
-  .swiper-wrapper {
-    padding-inline-start: 0;
-
-    .swiper-slide{
-      font-style: italic;
-      @include verticalCenter;
-      .wrapper{
-  
-        max-height:21rem;
-        overflow:auto;
-        scrollbar-color:$color-3 $black;
-        scrollbar-width:thin;
-        padding:1rem;
-      }
-
-      .wrapper::-webkit-scrollbar {
-        width: 0.5rem;;
-        background-color: $black; /* or add it to the track */
-      }
-
-      .wrapper::-webkit-scrollbar-thumb {
-        background: $color-3;
-    }
-
-      }
-      }
-
-      
-  .swiper-button-next, .swiper-button-prev
-  {
-    color:$color-3;
-  }
-  .swiper-pagination {
-    bottom: 0;
-    padding-bottom: 10px;
-    .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
-      background-color:$color-3;
-      opacity: 0.5;
-    }
-    .swiper-pagination-bullet-active {
-      background-color:$color-3;
-      opacity: 1;
-    }
-  }
-
-
-}
-
-.list{
-  display:none;
-}
-}
-
-@media (max-aspect-ratio: 4/3) {
-.testimonialContent {
-  margin-top:0.5rem!important;
-  min-height: calc(95vh - 62px)!important;
-  margin-left:0;
-
-}
-}
-@media (max-aspect-ratio: 3/4) {
-
-.testimonialContent {
-  background: none;
-  &:after {
-    content: '';
-    background: none;
-  }
-  .list{
-    display:flex;
-
-    flex-direction:column;
-    width:100%;
-    
-    .testimonial{
-    padding-left:1rem;
-    padding-right:1rem;
-    padding-bottom:1rem;
-    padding-top:1rem;
-
-    margin-left:1rem;
-    margin-right:1rem;
-
-    margin-top:2rem;
-    margin-bottom:2rem;
-
-    max-width:100%;
-    width:calc(100% - 2rem);
-    font-style: italic;
+  .testimonialContent {
+    background: linear-gradient(115deg, $color-1 50%, rgba(0, 255, 0, 0.25) 100%);
+    min-height: $minHeight;
+    width: 100%;
     border-radius: $borderRadius;
-    background: linear-gradient(115deg, rgba(0,255,0, 0.1) 50%, rgba(0,255,0, 0.2) 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: $shadow;
+    @include verticalCenter;
+    margin-left: 1rem;
 
-    p{
-      width:100%;
-      max-width:none;
+    &:after {
+      content: '';
+      height: 100%;
+      width: inherit;
+      background: url('../../media/lost-highway.jpg') no-repeat center/cover;
+      z-index: -1;
+      filter: brightness(50%);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
     }
 
-    ul{
-      width:100%;
-    };
+    .testimonial {
+      max-width: 75%;
+      max-height: 100%;
+
+      p {
+        color: $color-3;
+        max-width: 30rem;
+        line-height: 1.5rem;
+        white-space: pre-wrap;
+        white-space: pre-line;
+        text-align: justify;
+      }
+
+      ul {
+        padding-top: 1rem;
+        color: $color-3;
+        text-align: right;
+        font-size: 0.7rem;
+      }
+
+    }
+
+    .swiper {
+      width: 95%;
+      height: 25rem;
+
+      .swiper-wrapper {
+        padding-inline-start: 0;
+
+        .swiper-slide {
+          font-style: italic;
+          @include verticalCenter;
+
+          .wrapper {
+
+            max-height: 21rem;
+            overflow: auto;
+            scrollbar-color: $color-3 $black;
+            scrollbar-width: thin;
+            padding: 1rem;
+          }
+
+          .wrapper::-webkit-scrollbar {
+            width: 0.5rem;
+            background-color: $black;
+          }
+
+          .wrapper::-webkit-scrollbar-thumb {
+            background: $color-3;
+          }
+        }
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: $color-3;
+      }
+
+      .swiper-pagination {
+        bottom: 0;
+        padding-bottom: 10px;
+
+        .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+          background-color: $color-3;
+          opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+          background-color: $color-3;
+          opacity: 1;
+        }
+      }
+    }
+
+    .list {
+      display: none;
     }
   }
 
-  .swiper{
-    display:none;
-    color:$color-3;
+  @media (max-aspect-ratio: 4/3) {
+    .testimonialContent {
+      margin-top: 0.5rem !important;
+      min-height: calc(var(--vh) * 95 - var(--sh)) !important;
+      margin-left: 0;
+    }
   }
 
-  p{
-    text-align: left!important;
+  @media (max-aspect-ratio: 3/4) {
+
+    .testimonialContent {
+      background: none;
+
+      &:after {
+        content: '';
+        background: none;
+      }
+
+      .list {
+        display: flex;
+
+        flex-direction: column;
+        width: 100%;
+
+        .testimonial {
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-bottom: 1rem;
+          padding-top: 1rem;
+
+          margin-left: 1rem;
+          margin-right: 1rem;
+
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+
+          max-width: 100%;
+          width: calc(100% - 2rem);
+          font-style: italic;
+          border-radius: $borderRadius;
+          background: linear-gradient(115deg, rgba(0, 255, 0, 0.1) 50%, rgba(0, 255, 0, 0.2) 100%);
+
+          p {
+            width: 100%;
+            max-width: none;
+          }
+
+          ul {
+            width: 100%;
+          }
+        }
+      }
+
+      .swiper {
+        display: none;
+        color: $color-3;
+      }
+
+      p {
+        text-align: left !important;
+      }
+    }
   }
-}
-}
 }

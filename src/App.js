@@ -1,4 +1,5 @@
-import React from 'react';
+// import React from 'react';
+import React, { useEffect } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
@@ -6,7 +7,25 @@ import Knowledges from './pages/Knowledges';
 import NotFound from './pages/NotFound';
 import References from './pages/References';
 import Networkss from './pages/Networks';
+
 const App = () => {
+
+  useEffect(() => {
+
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
+    document.documentElement.style.setProperty('--vw', `${window.innerWidth / 100}px`);
+
+    let sidebar = document.querySelector('.sidebar');
+
+    if (sidebar !== null) {
+
+      let sh = parseFloat(window.getComputedStyle(sidebar, null).getPropertyValue('height'));
+
+      document.documentElement.style.setProperty('--sh', `${sh}px`);
+    }
+
+  }, []);
+
   return (
     <Router >
       <Routes>

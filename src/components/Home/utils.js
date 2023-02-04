@@ -9,7 +9,6 @@ export function AniMatrix(message, container, font, fontSize, fps) {
         if (resizeTimeout) { clearTimeout(resizeTimeout); resizeTimeout = null; }
 
         resizeTimeout = setTimeout(() => {
-
             clearTimeout(loopTimeout);
             AniMatrix(message, container, font, fontSize, fps);
         }, 100);
@@ -35,7 +34,6 @@ function makeMatrix(message, container, font, fontSize) {
     let _container = document.querySelector(container);
 
     _container.style.setProperty('--fs', `${fontSize}px`);
-    _container.style.setProperty('--w', `${fontSize}px`);
     _container.style.setProperty('--fm', `${font}`);
 
     let width = _container.offsetWidth;
@@ -61,9 +59,9 @@ function makeMatrix(message, container, font, fontSize) {
                 .join('')}
                 </div>`);
 
-    ['click', 'touchmove'].forEach(function (str) {
-        _container.addEventListener(str, (e) => { e.preventDefault(); });
-    });
+    // ['click', 'touchmove'].forEach(function (str) {
+    //     _container.addEventListener(str, (e) => { e.preventDefault(); });
+    // });
 
     let ctx = [];
 

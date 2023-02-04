@@ -31,11 +31,10 @@
 
     .homeContent {
 
-      min-height:calc(95vh - 62px)!important;
+      min-height:calc(var(--vh) * 95 - var(--sh))!important;
       width: auto;
       margin-top:0.5rem;
       margin-left:0;
-      // height: 85vh;
     }
   }
 }
