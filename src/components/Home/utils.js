@@ -1,20 +1,23 @@
 export function AniMatrix(message, container, font, fontSize, fps) {
 
-    let resizeTimeout = null;
+    let loopTimeout, resizeTimeout = null;
 
-    let loopTimeout = null;
+    let matrix = makeMatrix(message, container, font, fontSize);
 
-    window.onresize = function () {
+    function resize() {
 
         if (resizeTimeout) { clearTimeout(resizeTimeout); resizeTimeout = null; }
 
         resizeTimeout = setTimeout(() => {
-            clearTimeout(loopTimeout);
-            AniMatrix(message, container, font, fontSize, fps);
-        }, 100);
-    };
 
-    let matrix = makeMatrix(message, container, font, fontSize);
+            clearTimeout(loopTimeout);
+
+            matrix = makeMatrix(message, container, font, fontSize);
+
+            loop();
+
+        }, 200);
+    };
 
     let loop = function () {
 
@@ -27,6 +30,8 @@ export function AniMatrix(message, container, font, fontSize, fps) {
     }
 
     loop();
+
+    return Object.freeze({ resize })
 }
 
 function makeMatrix(message, container, font, fontSize) {
@@ -118,8 +123,8 @@ function makeMatrix(message, container, font, fontSize) {
             if (y === mY) {
 
                 let p = document.getElementById(`p-${x}`);
-                
-                if(p !== null) p.classList.add("visible");
+
+                if (p !== null) p.classList.add("visible");
 
                 completed.push(x);
             }
@@ -153,7 +158,6 @@ function makeMatrix(message, container, font, fontSize) {
         setBackground();
 
         points.filter(p => { return !completed.includes(p.x) }).forEach(p => { p.draw() });
-
     }
 
     function complete() { return completed.length === columns; }
@@ -164,7 +168,7 @@ function makeMatrix(message, container, font, fontSize) {
 
         _container.querySelectorAll('.point').forEach((element, i) => {
 
-            setTimeout(() => { element.classList.add('zoom'); }, 40 * Math.abs(i - Math.floor(mLength/2)))
+            setTimeout(() => { element.classList.add('zoom'); }, 40 * Math.abs(i - Math.floor(mLength / 2)))
         });
     }
 

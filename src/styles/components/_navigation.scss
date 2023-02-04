@@ -246,7 +246,7 @@
   }
 }
 
-@media only screen and (min-aspect-ratio: 16/8) and (max-height:900px) {
+@media only screen and (min-aspect-ratio: 16/8) and (max-height:600px) {
 
   .sidebar {
     min-width: auto;
@@ -281,11 +281,7 @@
             display: flex;
           }
         }
-
-
       }
     }
   }
-
-
 }

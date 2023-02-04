@@ -1,4 +1,3 @@
-// import React from 'react';
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
@@ -12,18 +11,39 @@ const App = () => {
 
   useEffect(() => {
 
-    document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
-    document.documentElement.style.setProperty('--vw', `${window.innerWidth / 100}px`);
+    let rTimeout = null;
 
     let sidebar = document.querySelector('.sidebar');
+    let sh;
 
-    if (sidebar !== null) {
+    const setCss = () => {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
+      document.documentElement.style.setProperty('--vw', `${window.innerWidth / 100}px`);
 
-      let sh = parseFloat(window.getComputedStyle(sidebar, null).getPropertyValue('height'));
+      if (sidebar !== null) {
 
-      document.documentElement.style.setProperty('--sh', `${sh}px`);
+        sh = parseFloat(window.getComputedStyle(sidebar, null).getPropertyValue('height'));
+
+        document.documentElement.style.setProperty('--sh', `${sh}px`);
+      }
     }
 
+    const resize = () => {
+
+      if (rTimeout) { clearTimeout(rTimeout); rTimeout = null; }
+
+      rTimeout = setTimeout(() => {
+        setCss();
+      }, 100);
+    };
+
+    setCss();
+
+    window.addEventListener('resize', resize);
+
+    return () => {
+      window.removeEventListener('resize', resize);
+    }
   }, []);
 
   return (
