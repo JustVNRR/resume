@@ -40,10 +40,10 @@ function makeMatrix(message, container, font, fontSize) {
     let mLength = message.length;
 
     _container.innerHTML = '<canvas></canvas>'.repeat(2)
-    .concat(`<div class="points">
+        .concat(`<div class="points">
                 ${Array.from(Array(mLength).keys())
-            .map(i => { return `<div class="point" id="p-${i}">${message[i]}</div>` })
-            .join('')}
+                .map(i => { return `<div class="point" id="p-${i}">${message[i]}</div>` })
+                .join('')}
             </div>`);
 
     let ctx = [];
@@ -71,16 +71,12 @@ function makeMatrix(message, container, font, fontSize) {
 
         columns = Math.floor(width / (fontSize) / 2) * 2;
         lines = Math.floor(height / (fontSize));
-
+        console.log(lines);
         mLength = message.length;
 
-        if (mLength > columns) {
-            message = message.substring(0, columns);
-            mLength = columns;
-        }
-
         mXStart = Math.floor((columns - mLength) / 2) + 1;
-        mY = height / fontSize / 2 + 0.4;
+
+        mY = Math.floor(height / fontSize / 2) + (lines % 2 === 0 ? 0.5 : 1);
 
         paddedMessage = ' '.repeat(mXStart).concat(message).padEnd(columns, ' ').split('');
 
@@ -138,7 +134,7 @@ function makeMatrix(message, container, font, fontSize) {
 
             if (paddedMessage[x] !== ' ') {
 
-                y =  mY - (Math.floor(mY/mLength) + Math.floor(Math.random() * 3)) * mLength + index + 1 - (x - mXStart);
+                y = mY - (Math.floor(mY / mLength) + Math.floor(Math.random() * 5)) * mLength + index + 1 - (x - mXStart);
 
                 speed = 1;
 

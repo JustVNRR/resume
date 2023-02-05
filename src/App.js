@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { /*useState,*/ useEffect } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
@@ -9,41 +9,41 @@ import Networkss from './pages/Networks';
 
 const App = () => {
 
-  const [windowDimension, detectHW] = useState({
-    winWidth: window.innerWidth,
-    winHeight: window.innerHeight
-  });
+  // const [windowDimension, detectHW] = useState({
+  //   winWidth: window.innerWidth,
+  //   winHeight: window.innerHeight
+  // });
 
-  const detectSize = () => {
-    detectHW({
-      winWidth: window.innerWidth,
-      winHeight: window.innerHeight
-    })
-  }
+  // const detectSize = () => {
+  //   detectHW({
+  //     winWidth: window.innerWidth,
+  //     winHeight: window.innerHeight
+  //   })
+  // }
   
   useEffect(() => {
 
-    let sidebar = document.querySelector('.sidebar');
-    let sh;
+    // let sidebar = document.querySelector('.sidebar');
+    // let sh;
 
-    const setCss = () => {
-      document.documentElement.style.setProperty('--vh', `${windowDimension.winHeight / 100}px`);
-      document.documentElement.style.setProperty('--vw', `${windowDimension.winWidth / 100}px`);
+    // const setCss = () => {
+    //   document.documentElement.style.setProperty('--vh', `${windowDimension.winHeight / 100}px`);
+    //   document.documentElement.style.setProperty('--vw', `${windowDimension.winWidth / 100}px`);
 
-      if (sidebar !== null) {
+    //   if (sidebar !== null) {
 
-        sh = parseFloat(window.getComputedStyle(sidebar, null).getPropertyValue('height'));
+    //     sh = parseFloat(window.getComputedStyle(sidebar, null).getPropertyValue('height'));
 
-        document.documentElement.style.setProperty('--sh', `${sh}px`);
-      }
-    }
+    //     document.documentElement.style.setProperty('--sh', `${sh}px`);
+    //   }
+    // }
 
-    setCss();
+    // setCss();
 
-    window.addEventListener('resize', detectSize);
+    // window.addEventListener('resize', detectSize);
 
-    return () => { window.removeEventListener('resize', detectSize); }
-  }, [windowDimension]);
+    // return () => { window.removeEventListener('resize', detectSize); }
+  }, [/*windowDimension*/]);
 
   return (
     <Router >
