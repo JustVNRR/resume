@@ -22,7 +22,7 @@ export function AniMatrix(message, container, font, fontSize) {
 
             window.removeEventListener('resize', resize);
 
-            //matrix.zoom();
+            matrix.zoom();
         };
     }
 
