@@ -46,10 +46,9 @@ function makeMatrix(message, container, font, fontSize) {
     //             .join('')}
     //         </div>`);
 
-    document.querySelector(".points").innerHTML += Array.from(Array(mLength)
-            .keys())
-            .map(i => { return `<div class="point" id="p-${i}">${message[i]}</div>` })
-            .join('');
+    document.querySelector(".points").innerHTML += Array.from(Array(mLength).keys())
+                                    .map(i => { return `<div class="point" id="p-${i}">${message[i]}</div>` })
+                                    .join('');
 
     let ctx = [];
 
