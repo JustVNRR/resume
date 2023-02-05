@@ -48,13 +48,34 @@ function makeMatrix(message, container, font, fontSize) {
 
     let ctx = [];
 
+    // let width, height, columns, lines, mXStart, mY, paddedMessage, textAlign, points = [], completed = [];
+
+    let width = _container.offsetWidth;
+    let height = _container.offsetHeight;
+
     Array.prototype.slice.call(_container.getElementsByTagName('canvas')).forEach(c => {
+        c.width = width;
+        c.height = height;
+        c.getContext("2d").font = `${fontSize}px ${font}`;
         ctx.push(c.getContext("2d"));
     });
 
-    let width, height, columns, lines, mXStart, mY, paddedMessage, textAlign, points = [], completed = [];
+    let columns = Math.floor(width / (fontSize) / 2) * 2;
+    let lines = Math.floor(height / (fontSize));
 
-    init();
+    let mXStart = Math.floor((columns - mLength) / 2) + 1;
+
+    let mY = Math.floor(height / fontSize / 2) + (lines % 2 === 0 ? 0.5 : 1);
+
+    let paddedMessage = ' '.repeat(mXStart).concat(message).padEnd(columns, ' ').split('');
+
+    let textAlign = (width / 2 + fontSize / 2) - paddedMessage.indexOf('W') * fontSize;
+
+    let points = Array.from(Array(columns).keys()).map(i => makePoint(i));
+
+    let completed = []
+
+    // init();
 
     function init() {
 
