@@ -39,43 +39,27 @@ function makeMatrix(message, container, font, fontSize) {
 
     let mLength = message.length;
 
-    _container.innerHTML = '<canvas></canvas>'.repeat(2)
-        .concat(`<div class="points">
-                ${Array.from(Array(mLength).keys())
-                .map(i => { return `<div class="point" id="p-${i}">${message[i]}</div>` })
-                .join('')}
-            </div>`);
+    // _container.innerHTML = '<canvas></canvas>'.repeat(2)
+    //     .concat(`<div class="points">
+    //             ${Array.from(Array(mLength).keys())
+    //             .map(i => { return `<div class="point" id="p-${i}">${message[i]}</div>` })
+    //             .join('')}
+    //         </div>`);
+
+    document.querySelector(".points").innerHTML += Array.from(Array(mLength)
+            .keys())
+            .map(i => { return `<div class="point" id="p-${i}">${message[i]}</div>` })
+            .join('');
 
     let ctx = [];
 
-    // let width, height, columns, lines, mXStart, mY, paddedMessage, textAlign, points = [], completed = [];
-
-    let width = _container.offsetWidth;
-    let height = _container.offsetHeight;
-
     Array.prototype.slice.call(_container.getElementsByTagName('canvas')).forEach(c => {
-        c.width = width;
-        c.height = height;
-        c.getContext("2d").font = `${fontSize}px ${font}`;
         ctx.push(c.getContext("2d"));
     });
 
-    let columns = Math.floor(width / (fontSize) / 2) * 2;
-    let lines = Math.floor(height / (fontSize));
+    let width, height, columns, lines, mXStart, mY, paddedMessage, textAlign, points = [], completed = [];
 
-    let mXStart = Math.floor((columns - mLength) / 2) + 1;
-
-    let mY = Math.floor(height / fontSize / 2) + (lines % 2 === 0 ? 0.5 : 1);
-
-    let paddedMessage = ' '.repeat(mXStart).concat(message).padEnd(columns, ' ').split('');
-
-    let textAlign = (width / 2 + fontSize / 2) - paddedMessage.indexOf('W') * fontSize;
-
-    let points = Array.from(Array(columns).keys()).map(i => makePoint(i));
-
-    let completed = []
-
-    // init();
+    init();
 
     function init() {
 
@@ -92,7 +76,7 @@ function makeMatrix(message, container, font, fontSize) {
 
         columns = Math.floor(width / (fontSize) / 2) * 2;
         lines = Math.floor(height / (fontSize));
-        console.log(lines);
+
         mLength = message.length;
 
         mXStart = Math.floor((columns - mLength) / 2) + 1;

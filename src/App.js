@@ -9,41 +9,18 @@ import Networkss from './pages/Networks';
 
 const App = () => {
 
-  const [windowDimension, detectHW] = useState({
-    winWidth: window.innerWidth,
-    winHeight: window.innerHeight
-  });
+  const [winHeight, detectHW] = useState(window.innerHeight);
 
-  const detectSize = () => {
-    detectHW({
-      winWidth: window.innerWidth,
-      winHeight: window.innerHeight
-    })
-  }
+  const detectSize = () => { detectHW(window.innerHeight) }
   
   useEffect(() => {
 
-    let sidebar = document.querySelector('.sidebar');
-    let sh;
-
-    const setCss = () => {
-      document.documentElement.style.setProperty('--vh', `${windowDimension.winHeight / 100}px`);
-      document.documentElement.style.setProperty('--vw', `${windowDimension.winWidth / 100}px`);
-
-      if (sidebar !== null) {
-
-        sh = parseFloat(window.getComputedStyle(sidebar, null).getPropertyValue('height'));
-
-        document.documentElement.style.setProperty('--sh', `${sh}px`);
-      }
-    }
-
-    setCss();
+    document.documentElement.style.setProperty('--vh', `${winHeight / 100}px`);
 
     window.addEventListener('resize', detectSize);
 
     return () => { window.removeEventListener('resize', detectSize); }
-  }, [windowDimension]);
+  }, [winHeight]);
 
   return (
     <Router >

@@ -13,7 +13,11 @@ const Matrix = (props) => {
 
     return (
         <>
+          <canvas></canvas>
+          <canvas></canvas>
+          <div className="points">
 
+          </div>
         </>
     );
 };

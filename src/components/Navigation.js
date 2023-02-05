@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useElementSize } from 'usehooks-ts'
 const Navigation = () => {
+
+    const [sideRef, { height }] = useElementSize();
 
     useEffect(() => {
         window.addEventListener('scroll', isSticky);
@@ -15,9 +18,13 @@ const Navigation = () => {
         scrollTop >= 10 ? header.classList.add('is-sticky') : header.classList.remove('is-sticky');
     };
 
+    useEffect(() => {
+        document.documentElement.style.setProperty('--sh', `${height}px`);
+        
+      }, [height]);
 
     return (
-        <div className="sidebar">
+        <div className="sidebar" ref={sideRef}>
             <div className="id">
                 <div className="idContent">
                 <NavLink exact="true" to="/" activeclassname="navActive">
