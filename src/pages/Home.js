@@ -6,7 +6,7 @@ const Home = () => {
         <div className="home">
             <Navigation />
             <div className="homeContent">
-                <Matrix message="HELLO WORLD" container =".homeContent" font="pixel" fontSize="14" fps="24" />
+                <Matrix message="HELLO WORLD" container =".homeContent" font="pixel" fontSize="14" />
             </div>
         </div>
     );

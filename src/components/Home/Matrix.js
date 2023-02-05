@@ -4,9 +4,9 @@ const Matrix = (props) => {
 
       useEffect(() => {
 
-        const { message, container, font, fontSize, fps } = props;
+        const { message, container, font, fontSize } = props;
 
-        AniMatrix(message, container, font, fontSize, fps);
+        AniMatrix(message, container, font, fontSize);
         
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
