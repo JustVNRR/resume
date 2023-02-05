@@ -246,7 +246,7 @@
   }
 }
 
-@media only screen and (min-aspect-ratio: 16/8) and (max-height:600px) {
+@media only screen /*and (min-aspect-ratio: 16/8)*/ and (max-height:600px) {
 
   .sidebar {
     min-width: auto;

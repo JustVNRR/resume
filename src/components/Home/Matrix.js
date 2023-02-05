@@ -1,21 +1,15 @@
 import React, { useEffect } from 'react';
 import { AniMatrix } from './utils.js';
-
 const Matrix = (props) => {
 
-    useEffect(() => {
+      useEffect(() => {
 
         const { message, container, font, fontSize, fps } = props;
 
-        let animation = AniMatrix(message, container, font, fontSize, fps);
-
-        const resize = () => { animation.resize(); }
-
-        window.addEventListener('resize', resize);
-
-        return () => { window.removeEventListener('resize', resize); }
-
-    }, [props]);
+        AniMatrix(message, container, font, fontSize, fps);
+        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [])
 
     return (
         <>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
@@ -9,16 +9,26 @@ import Networkss from './pages/Networks';
 
 const App = () => {
 
-  useEffect(() => {
+  const [windowDimension, detectHW] = useState({
+    winWidth: window.innerWidth,
+    winHeight: window.innerHeight
+  });
 
-    let rTimeout = null;
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight
+    })
+  }
+  
+  useEffect(() => {
 
     let sidebar = document.querySelector('.sidebar');
     let sh;
 
     const setCss = () => {
-      document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
-      document.documentElement.style.setProperty('--vw', `${window.innerWidth / 100}px`);
+      document.documentElement.style.setProperty('--vh', `${windowDimension.winHeight / 100}px`);
+      document.documentElement.style.setProperty('--vw', `${windowDimension.winWidth / 100}px`);
 
       if (sidebar !== null) {
 
@@ -28,23 +38,12 @@ const App = () => {
       }
     }
 
-    const resize = () => {
-
-      if (rTimeout) { clearTimeout(rTimeout); rTimeout = null; }
-
-      rTimeout = setTimeout(() => {
-        setCss();
-      }, 100);
-    };
-
     setCss();
 
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', detectSize);
 
-    return () => {
-      window.removeEventListener('resize', resize);
-    }
-  }, []);
+    return () => { window.removeEventListener('resize', detectSize); }
+  }, [windowDimension]);
 
   return (
     <Router >
