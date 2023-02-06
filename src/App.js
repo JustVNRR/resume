@@ -1,5 +1,5 @@
-// import React, { useState, useEffect } from 'react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+// import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
@@ -10,18 +10,18 @@ import Networkss from './pages/Networks';
 
 const App = () => {
 
-  // const [winHeight, detectHW] = useState(window.innerHeight);
+  const [winHeight, detectHW] = useState(window.innerHeight);
 
-  // const detectSize = () => { detectHW(window.innerHeight) }
+  const detectSize = () => { detectHW(window.innerHeight) }
   
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   document.documentElement.style.setProperty('--vh', `${winHeight / 100}px`);
+    document.documentElement.style.setProperty('--vh', `${winHeight / 100}px`);
 
-  //   window.addEventListener('resize', detectSize);
+    window.addEventListener('resize', detectSize);
 
-  //   return () => { window.removeEventListener('resize', detectSize); }
-  // }, [winHeight]);
+    return () => { window.removeEventListener('resize', detectSize); }
+  }, [winHeight]);
 
   return (
     <Router >

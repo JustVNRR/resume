@@ -1,99 +1,44 @@
-export function AniMatrix(message, container, font, fontSize) {
+export function makeMatrix(message, container, font, fontSize) {
 
-    let resizeTimeout = null;
+    const _container = document.querySelector(container);
 
-    window.addEventListener('resize', resize);
+    const mLength = message.length;
 
-    function resize() {
+    const ctx = [];
 
-        if (resizeTimeout) { clearTimeout(resizeTimeout); resizeTimeout = null; }
+    Array.prototype.slice.call(_container.getElementsByTagName('canvas')).forEach(c => { ctx.push(c.getContext("2d")); });
 
-        resizeTimeout = setTimeout(() => { matrix.init(); }, 100);
-    };
+    _container.querySelectorAll('.point').forEach((element, i) => { element.classList.remove('zoom'); });
 
-    let matrix = makeMatrix(message, container, font, fontSize);
+    document.querySelectorAll('*').forEach((element) => { element.classList.remove('visible'); });
 
-    let loop = function () {
+    const width = _container.offsetWidth;
+    const height = _container.offsetHeight;
 
-        matrix.draw();
-
-        if (!matrix.complete()) { setTimeout(() => { requestAnimationFrame(loop); }, 1000 / 24); }
-        else {
-
-            window.removeEventListener('resize', resize);
-
-            matrix.zoom();
-        };
-    }
-
-    loop();
-}
-
-function makeMatrix(message, container, font, fontSize) {
-
-    let _container = document.querySelector(container);
-
-    _container.style.setProperty('--fs', `${fontSize}px`);
-    _container.style.setProperty('--w', `${fontSize}px`);
-    _container.style.setProperty('--fm', `${font}`);
-
-    let mLength = message.length;
-
-    // _container.innerHTML = '<canvas></canvas>'.repeat(2)
-    //     .concat(`<div class="points">
-    //             ${Array.from(Array(mLength).keys())
-    //             .map(i => { return `<div class="point" id="p-${i}">${message[i]}</div>` })
-    //             .join('')}
-    //         </div>`);
-
-    document.querySelector(".points").innerHTML += Array.from(Array(mLength).keys())
-                                    .map(i => { return `<div class="point" id="p-${i}">${message[i]}</div>` })
-                                    .join('');
-
-    let ctx = [];
-
-    Array.prototype.slice.call(_container.getElementsByTagName('canvas')).forEach(c => {
-        ctx.push(c.getContext("2d"));
+    ctx.forEach(c => {
+        c.canvas.width = width;
+        c.canvas.height = height;
+        c.font = `${fontSize}px ${font}`;
     });
 
-    let width, height, columns, lines, mXStart, mY, paddedMessage, textAlign, points = [], completed = [];
+    const columns = Math.floor(width / (fontSize) / 2) * 2;
+    const lines = Math.floor(height / (fontSize));
 
-    init();
+    const mXStart = Math.floor((columns - mLength) / 2) + 1;
 
-    function init() {
+    const mY = Math.floor(height / fontSize / 2) + (lines % 2 === 0 ? 0.5 : 1);
 
-        document.querySelectorAll('*').forEach((element) => { element.classList.remove('visible'); });
+    const paddedMessage = ' '.repeat(mXStart).concat(message).padEnd(columns, ' ').split('');
 
-        width = _container.offsetWidth;
-        height = _container.offsetHeight;
+    const textAlign = (width / 2 + fontSize / 2) - paddedMessage.indexOf('W') * fontSize;
 
-        ctx.forEach(c => {
-            c.canvas.width = width;
-            c.canvas.height = height;
-            c.font = `${fontSize}px ${font}`;
-        });
+    const points = Array.from(Array(columns).keys()).map(i => makePoint(i));
 
-        columns = Math.floor(width / (fontSize) / 2) * 2;
-        lines = Math.floor(height / (fontSize));
-
-        mLength = message.length;
-
-        mXStart = Math.floor((columns - mLength) / 2) + 1;
-
-        mY = Math.floor(height / fontSize / 2) + (lines % 2 === 0 ? 0.5 : 1);
-
-        paddedMessage = ' '.repeat(mXStart).concat(message).padEnd(columns, ' ').split('');
-
-        textAlign = (width / 2 + fontSize / 2) - paddedMessage.indexOf('W') * fontSize;
-
-        points = Array.from(Array(columns).keys()).map(i => makePoint(i));
-
-        completed = []
-    }
+    const completed = []
 
     function setBackground() {
 
-        let ratio = completed.length / columns;
+        const ratio = completed.length / columns;
 
         ctx[0].canvas.style.opacity = 1 - Math.pow(ratio, 2);
         ctx[0].fillStyle = `rgba(0,0,0, ${0.1 + 0.1 * Math.pow(ratio, 3) * 7})`;
@@ -101,7 +46,7 @@ function makeMatrix(message, container, font, fontSize) {
         ctx[0].fillStyle = "rgba(0,255,0,1)";
 
         ctx[1].clearRect(0, 0, width, height);
-        ctx[1].fillStyle = `rgba(255,255,255,${0.7 - Math.pow(ratio, 3)})`;
+        ctx[1].fillStyle = `rgba(255,255,255,${0.8 - Math.pow(ratio, 3)})`;
     }
 
     function makePoint(x) {
@@ -109,16 +54,16 @@ function makeMatrix(message, container, font, fontSize) {
         let speed = Math.random() * 0.5 + 0.5;
         let inc = 0;
         let y = -Math.random() * lines / 2;
-        let X = x * fontSize + textAlign + (fontSize - ctx[0].measureText('W').width) / 2;
+        const X = x * fontSize + textAlign + (fontSize - ctx[0].measureText('W').width) / 2;
 
         function draw() {
 
             inc++;
 
-            let index = inc - Math.floor(inc / mLength) * mLength;
+            const index = inc - Math.floor(inc / mLength) * mLength;
 
             value = message[index];
-            let Y = y * fontSize;
+            const Y = y * fontSize;
 
             ctx[0].fillText(value, X, Y);
             ctx[1].fillText(value, X, Y);
@@ -138,7 +83,7 @@ function makeMatrix(message, container, font, fontSize) {
 
             if (paddedMessage[x] !== ' ') {
 
-                y = mY - (Math.floor(mY / mLength) + Math.floor(Math.random() * 5)) * mLength + index + 1 - (x - mXStart);
+                y = mY - (Math.ceil(mY / mLength) + Math.floor(Math.random() * 5)) * mLength + index + 1 - (x - mXStart);
 
                 speed = 1;
 
@@ -162,14 +107,11 @@ function makeMatrix(message, container, font, fontSize) {
         setBackground();
 
         points.filter(p => { return !completed.includes(p.x) }).forEach(p => { p.draw() });
-
     }
 
     function complete() { return completed.length === columns; }
 
     function zoom() {
-
-        _container.querySelectorAll('canvas').forEach(c => { c.parentNode.removeChild(c); });
 
         _container.querySelectorAll('.point').forEach((element, i) => {
 
@@ -177,5 +119,5 @@ function makeMatrix(message, container, font, fontSize) {
         });
     }
 
-    return Object.freeze({ init, draw, complete, zoom })
+    return Object.freeze({ draw, complete, zoom })
 }
