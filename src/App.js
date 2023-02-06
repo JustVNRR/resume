@@ -14,9 +14,9 @@ const App = () => {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
   }
   
-  useEffect(() => {
+  setSize();
 
-    setSize();
+  useEffect(() => {
 
     window.addEventListener('resize', setSize);
 
