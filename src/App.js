@@ -16,7 +16,7 @@ const App = () => {
   
   useEffect(() => {
 
-    document.documentElement.style.setProperty('--vh', `${winHeight / 100}px`);
+    if(winHeight > 0 ) document.documentElement.style.setProperty('--vh', `${winHeight / 100}px`);
 
     window.addEventListener('resize', detectSize);
 
