@@ -16,7 +16,7 @@ const App = () => {
   
   useEffect(() => {
 
-    // setSize();
+    setSize();
 
     window.addEventListener('resize', setSize);
 
