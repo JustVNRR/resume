@@ -11,11 +11,14 @@ export function makeMatrix(message, container, font, fontSize) {
     _container.querySelectorAll('.point').forEach((element, i) => { element.classList.remove('zoom'); });
 
     document.querySelectorAll('*').forEach((element) => { element.classList.remove('visible'); });
+    
+    // const compStyles = window.getComputedStyle(_container);
 
-    const compStyles = window.getComputedStyle(_container);
+    // const width = parseFloat(compStyles.getPropertyValue('width'));
+    // const height = parseFloat(compStyles.getPropertyValue('height'));
 
-    const width = parseFloat(compStyles.getPropertyValue('width'));
-    const height = parseFloat(compStyles.getPropertyValue('height'));
+    const width = _container.offsetWidth;
+    const height = _container.offsetHeight;
 
     ctx.forEach(c => {
         c.canvas.width = width;
