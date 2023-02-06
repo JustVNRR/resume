@@ -10,18 +10,17 @@ import Networkss from './pages/Networks';
 
 const App = () => {
 
-
-  const detectSize = () => { 
+  const setSize = () => { 
     document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
   }
   
   useEffect(() => {
 
-    detectSize();
+    // setSize();
 
-    window.addEventListener('resize', detectSize);
+    window.addEventListener('resize', setSize);
 
-    return () => { window.removeEventListener('resize', detectSize); }
+    return () => { window.removeEventListener('resize', setSize); }
   }, []);
 
   return (
