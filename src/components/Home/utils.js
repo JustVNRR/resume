@@ -12,8 +12,10 @@ export function makeMatrix(message, container, font, fontSize) {
 
     document.querySelectorAll('*').forEach((element) => { element.classList.remove('visible'); });
 
-    const width = _container.offsetWidth;
-    const height = _container.offsetHeight;
+    const compStyles = window.getComputedStyle(_container);
+
+    const width = parseFloat(compStyles.getPropertyValue('width'));
+    const height = parseFloat(compStyles.getPropertyValue('height'));
 
     ctx.forEach(c => {
         c.canvas.width = width;
