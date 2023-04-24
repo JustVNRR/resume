@@ -190,10 +190,28 @@ export const testimonialData = [
   },
   {
     id: 22,
-    prenom:'Jean-Jaques',
+    formation: 'C# Initiation + Approfondissement',
+    prenom:'Willy',
+    date:'10/03/2023',
+    affiche:'oui',
+    langage:'c#',
+    text: `Très bon formateur : pédagogue, à l'écoute, très bon niveau et passionné par ce qu'il enseigne.`   
+  },
+  {
+    id: 23,
+    formation: 'C# Initiation + Approfondissement',
+    prenom:'Patrice',
+    date:'10/03/2023',
+    affiche:'oui',
+    langage:'c#',
+    text: `Excellent formateur, maîtrise le langage C Sharp.`   
+  },
+  {
+    id: 24,
+    prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'oui',
-    langage:'javascript',
+    langage:'c',
     text: `Lionel, Dr Ingénieur diplômé de l'université de Nancy, a travaillé sous ma direction du 1er juillet 2007 à ce jour (son contrat prend fin le 30 juin 2010), dans le cadre du projet de recherche Auralias. Ce projet vise à concevoir et réaliser un auralizateur interactif pour des applications en acoustique des salles. Lionel était plus particulièrement responsable du développement de l'auralizateur proprement dit, c'est-à-dire de la partie centrale du projet.
     
     Les connaissances et aptitudes nécessaires à cette tâche couvrent à la fois l'acoustique, l'audio, le traitement du signal et l'informatique temps réel. Au cours de ces trois années, Lionel a montré qu'il pouvait acquérir (pour certaines) et maîtriser ces aptitudes, en particulier dans la programmation d'outils temps réel (en langage C pour le projet).
