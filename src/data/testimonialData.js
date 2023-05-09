@@ -18,7 +18,7 @@ export const testimonialData = [
     text: 'Lionel est très sympathique et s\'adapte au rythme de chacun.'
   },
   {
-    id: 4,
+    id: 3,
     formation: 'C# Initiation',
     prenom:'Matthieu',
     date:'01/06/2022',
@@ -27,7 +27,7 @@ export const testimonialData = [
     text: 'Le formateur s\'est interrompu sans problème pour répondre à chaque question. Les réponses étaient claires et précises.'
   },
   {
-    id: 3,
+    id: 4,
     formation: 'C# Initiation + Approfondissement',
     prenom:'Hervé',
     date:'24/06/2022',
