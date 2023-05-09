@@ -18,7 +18,7 @@ export const testimonialData = [
     text: 'Lionel est très sympathique et s\'adapte au rythme de chacun.'
   },
   {
-    id: 3,
+    id: 4,
     formation: 'C# Initiation',
     prenom:'Matthieu',
     date:'01/06/2022',
@@ -27,7 +27,7 @@ export const testimonialData = [
     text: 'Le formateur s\'est interrompu sans problème pour répondre à chaque question. Les réponses étaient claires et précises.'
   },
   {
-    id: 4,
+    id: 3,
     formation: 'C# Initiation + Approfondissement',
     prenom:'Hervé',
     date:'24/06/2022',
@@ -112,7 +112,7 @@ export const testimonialData = [
     formation: 'C# Approfondissement : Développer une application de bureau',
     prenom:'Camille',
     date:'07/10/2022',
-    affiche:'oui',
+    affiche:'non',
     langage:'c#',
     text: 'Rien à redire.'
   },
@@ -210,7 +210,7 @@ export const testimonialData = [
     id: 24,
     prenom:'Jean Jacques',
     date:'20/04/2010',
-    affiche:'oui',
+    affiche:'non',
     langage:'c',
     text: `Lionel, Dr Ingénieur diplômé de l'université de Nancy, a travaillé sous ma direction du 1er juillet 2007 à ce jour (son contrat prend fin le 30 juin 2010), dans le cadre du projet de recherche Auralias. Ce projet vise à concevoir et réaliser un auralizateur interactif pour des applications en acoustique des salles. Lionel était plus particulièrement responsable du développement de l'auralizateur proprement dit, c'est-à-dire de la partie centrale du projet.
     
