@@ -64,4 +64,13 @@ export const portfolioData = [
     info: 'Module de convolution de signaux audios par des réponses impulsionnelles préalablement obtenues sur base de simulations d\'acoustique des salles.',
     picture: './media/auralizator.jpg'
   },
+  {
+    id: 8,
+    name: 'Domain Driven Design Clean ASP.NET Rest API',
+    languages: ['c#'],
+    languagesIcons: ['fa fa-csharp'],
+    source: 'https://github.com/JustVNRR/BDinner-DDD-REST-API.git',
+    info: 'API de réservation de dîners sur le modèle de Airbnb. Développée selon le tutoriel proposé par le développeur Microsoft Amichai Mantinband ',
+    picture: './media/bubberdinner.jpg'
+  },
 ]

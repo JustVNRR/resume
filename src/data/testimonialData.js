@@ -208,6 +208,33 @@ export const testimonialData = [
   },
   {
     id: 24,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Ghobad',
+    date:'26/05/2023',
+    affiche:'oui',
+    langage:'python',
+    text: `Lionel est un excellent professeur, il utilise des exemples de projets intéressants et il s'assure que tout le monde comprend avant de commencer le nouveau sujet.`   
+  },
+  {
+    id: 25,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Damien',
+    date:'23/06/2023',
+    affiche:'oui',
+    langage:'python',
+    text: `Lionel prend le temps de nous aider sur les différents problèmes que l'on rencontre pendant le cour et sur les exercices, bonne pédagogie.`   
+  },
+  {
+    id: 26,
+    formation: 'Java SE Initiation + Approfondissement',
+    prenom:'Yassinn',
+    date:'30/06/2023',
+    affiche:'oui',
+    langage:'java',
+    text: `Très bon formateur qui connait son domaine et aime son travail. Il prend le temps d'expliquer pour tout le monde et explique très bien. Il répond a toute les questions. Franchement, chapeau !`   
+  },
+  {
+    id: 27,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
