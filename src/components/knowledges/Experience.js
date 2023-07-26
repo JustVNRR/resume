@@ -27,7 +27,7 @@ const Experience = () => {
             <div className="exp exp-5">
                 <h4>Chargé d’enseignement - Ecole des Mines (Nancy)</h4>
                 <h5> 1 an</h5>
-                <p>TD et TP de mécanique des fluides</p>
+                <p>Mécanique des fluides</p>
             </div>
             <div className="exp exp-6">
                 <h4>Consultant - Alten</h4>

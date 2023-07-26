@@ -40,8 +40,8 @@ export function makeMatrix(message, container, font, fontSize) {
 
         const ratio = completed.length / columns;
 
-        ctx[0].canvas.style.opacity = 1 - Math.pow(ratio, 2);
-        ctx[0].fillStyle = `rgba(0,0,0, ${0.1 + 0.1 * Math.pow(ratio, 3) * 7})`;
+        ctx[0].canvas.style.opacity = ratio < 0.5 ? 1 : 1 -Math.pow(ratio, 2);
+        ctx[0].fillStyle = `rgba(0,0,0, ${0.05 + 0.1 * Math.pow(ratio, 3) * 7})`;
         ctx[0].fillRect(0, 0, width, height);
         ctx[0].fillStyle = "rgba(0,255,0,1)";
 
@@ -51,7 +51,7 @@ export function makeMatrix(message, container, font, fontSize) {
 
     function makePoint(x) {
         let value = 'X';
-        let speed = Math.random() * 0.5 + 0.5;
+        let speed = Math.random() * 0.2 + 0.15;
         let inc = 0;
         let y = -Math.random() * lines / 2;
         const X = x * fontSize + textAlign + (fontSize - ctx[0].measureText('W').width) / 2;
@@ -63,6 +63,7 @@ export function makeMatrix(message, container, font, fontSize) {
             const index = inc - Math.floor(inc / mLength) * mLength;
 
             value = message[index];
+            
             const Y = y * fontSize;
 
             ctx[0].fillText(value, X, Y);
@@ -85,7 +86,7 @@ export function makeMatrix(message, container, font, fontSize) {
 
                 y = mY - (Math.ceil(mY / mLength) + Math.floor(Math.random() * 5)) * mLength + index + 1 - (x - mXStart);
 
-                speed = 1;
+                speed = 0.25;
 
                 return;
             }

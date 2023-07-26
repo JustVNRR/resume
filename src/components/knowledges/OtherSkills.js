@@ -3,7 +3,7 @@ import React from 'react';
 const OtherSkills = () => {
     return (
         <div className="otherSkills">
-            <h3>Autres</h3>
+            <h3>Divers</h3>
             <div className="list">
                 <ul>
                     <li><i className="fas fa-check-square"></i> Anglais</li>

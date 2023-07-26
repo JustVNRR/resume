@@ -9,12 +9,14 @@ import OtherSkills from '../components/knowledges/OtherSkills';
 const Knowledges = () => {
     return (
         <div className="knowledges">
-            <Navigation/>
+            <Navigation />
             <div className="knowledgesContent">
-                <Languages/>
-                <Experience/>
-                <OtherSkills/>
-                <Education/>
+                <div className="knowledgesWrapperContent">
+                    <Languages />
+                    <Experience />
+                    <OtherSkills />
+                    <Education />
+                </div>
             </div>
         </div>
     );

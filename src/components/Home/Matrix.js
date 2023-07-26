@@ -22,7 +22,7 @@ const Matrix = (props) => {
       matrix.draw();
 
       if (!matrix.complete())
-        loopTimeout = setTimeout(() => { requestAnimationFrame(loop); }, 1000 / 24);
+        loopTimeout = setTimeout(() => { requestAnimationFrame(loop); }, 1000 / 60);
       else
         matrix.zoom();
     }

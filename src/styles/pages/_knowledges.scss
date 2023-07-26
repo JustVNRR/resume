@@ -1,27 +1,50 @@
 .knowledges {
+
   .knowledgesContent {
-    color:$color-4;
-    min-height: $minHeight;
+    height: $minHeight;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 1rem;
+    padding: 0.3rem;
+    border-radius: $borderRadius;
+    box-shadow: $shadow;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .knowledgesContent::-webkit-scrollbar {
+    display: none;
+  }
+
+  .knowledgesWrapperContent {
+    color: $color-4;
     width: 100%;
     position: relative;
-    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 80% 20%;
-    grid-template-areas: 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "L L E E E"
+      "L L E E E"
+      "L L E E E"
       "L L E E E"
       "F F F O O";
-      margin-left:1rem;
 
-    .languagesFrameworks, .experience, .otherSkills, .education {
+    .languagesFrameworks,
+    .experience,
+    .otherSkills,
+    .education {
       background: $color-2;
       border-radius: $borderRadius;
       padding: .8rem;
       margin: .1rem;
-
       box-shadow: $shadow;
+      background: linear-gradient(115deg, $color-1 60%, rgba(0, 255, 0, 0.15) 100%);
 
     }
+
     h3 {
       font-size: 1.4rem;
       margin-bottom: 1rem;
@@ -36,16 +59,24 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
-      grid-template-areas: 
+      grid-template-areas:
         "L"
         "F";
 
-      .languageDisplay {
+      .languagesDisplay {
         grid-area: L;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
-      .frameworkDisplay {
+
+      .frameworksDisplay {
         grid-area: F;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
+
       h3 {
         margin-bottom: 0.3rem;
       }
@@ -58,20 +89,21 @@
 
         span {
           width: 36%;
-          color:$color-3;
+          color: $color-3;
 
-          &:nth-child(2){
-            text-align: center; 
+          &:nth-child(2) {
+            text-align: center;
             width: 20%;
           }
-          &:nth-child(3){
+
+          &:nth-child(3) {
             text-align: right;
             width: 44%;
           }
-        
+
           &:nth-child(2):before,
           &:nth-child(3):before {
-            content:'';
+            content: '';
             background: $color-3;
             position: absolute;
             height: 13rem;
@@ -81,11 +113,14 @@
           }
         }
       }
+
       .languagesList {
-        line-height:1.35rem;
+        line-height: 1.35rem;
+
         li {
           color: $color-4;
         }
+
         .progressBar {
           height: .4rem;
           background: transparent;
@@ -111,13 +146,14 @@
         }
       }
     }
+
     .experience {
       grid-area: E;
       margin: .1rem 0.1rem .5rem .5rem;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 10% 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: 
+      grid-template-areas:
         "1"
         "2"
         "3"
@@ -125,41 +161,51 @@
         "5"
         "6"
         "7";
-      
+
       h3 {
         grid-area: 1;
       }
+
       h4 {
         font-size: 1.1rem;
         color: $color-4;
       }
+
       h5 {
         color: $color-4;
         padding: 0.5rem 0 0.5rem 1rem;
       }
+
       p {
         text-align: justify;
         padding: 0 1rem;
       }
+
       .exp-1 {
         grid-area: 2;
       }
+
       .exp-2 {
         grid-area: 3;
       }
+
       .exp-3 {
         grid-area: 4;
       }
+
       .exp-4 {
         grid-area: 5;
       }
+
       .exp-5 {
         grid-area: 6;
       }
+
       .exp-6 {
         grid-area: 7;
       }
     }
+
     .otherSkills {
       grid-area: O;
       margin-left: 0.5rem;
@@ -170,116 +216,54 @@
         height: 100%;
         margin: 0 auto;
         justify-content: space-between;
-        line-height:2rem;
+        line-height: 2rem;
       }
     }
+
     .education {
       grid-area: F;
       padding-right: 1.5rem;
 
       ul {
-        line-height:2rem;
+        line-height: 2rem;
+
         li {
           i {
-            min-width:2rem;
-            text-align:center;
+            min-width: 2rem;
+            text-align: center;
           }
         }
       }
     }
   }
 }
+
 @media (max-aspect-ratio: 4/3) {
 
-  .knowledges
-  {
-    display: block;
-
-    .knowledgesContent {
-
-      width:auto;
-
-      min-height:calc(var(--vh) * 97 - var(--sh))!important;
-
-      margin-top:0.5rem;
-
-      margin-left:0;
-
-
-      h3 {
-        font-size: 1.2rem !important;
-        margin:0;
-      }
-      p {
-        font-size: .8rem;
-      }
-      .otherSkills, .education {
-        font-size: .8rem;
-      }
-    }
-  }
-  
-}
-@media screen and (max-width: 850px){
   .knowledgesContent {
-
-    h4 {
-      font-size: .9rem !important;
-    }
-    h5 {
-      font-size: .6rem !important;
-      padding: .2rem 1rem !important;
-    }
+    margin-left: 0px !important;
+    margin-top: 0.5rem !important;
+    height: calc(var(--vh) * 95 - var(--sh)) !important;
   }
 }
-@media screen and (max-width: 700px){
-  .knowledgesContent {
+
+@media(max-aspect-ratio:1/1) {
+  .knowledgesWrapperContent {
     display: block !important;
 
-    // .languagesFrameworks, .experience, .otherSkills, .education {
-    //   margin: 1rem !important;
+    .languagesFrameworks,
+    .experience,
+    .otherSkills,
+    .education {
 
-    // }
-    .languagesDisplay{
-      margin-top:1rem;
-      margin-bottom:1rem;
-    }
-    .languagesList{
-      line-height:2.3rem;
-    }
-    .experience{
-      line-height:1.2rem;
-      display:block!important;
-
-      .exp{
-        margin-top:0.5rem;
-        margin-bottom:0.5rem;
-      }
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+      margin-left: 0.5rem !important;
+      margin-right: 0.5rem !important;
     }
 
-    .otherSkills
-    {
-      ul{
-        line-height: 2rem;
-      }
-    }
-
-    // .education{
-    //   height:10rem;
-    // }
-  }
-}
-
-@media (max-aspect-ratio: 5/6) {
-  .knowledgesContent {
-    display: block !important;
-
-    .languagesFrameworks, .experience, .otherSkills, .education {
-  
-      margin-top:0.5rem!important;
-      margin-bottom:0.5rem!important;
-      margin-left:0.5rem!important;
-      margin-right:0.5rem!important;
+    .frameworksDisplay {
+      margin-top: 1rem;
     }
   }
 }
