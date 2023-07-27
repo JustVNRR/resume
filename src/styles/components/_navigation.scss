@@ -169,45 +169,50 @@
   }
 }
 
-// @media only screen /*and (min-aspect-ratio: 16/8)*/ and (max-height:600px) {
-// @media only screen and (hover: none) and (pointer: coarse) and (min-aspect-ratio: 16/8) {
-@media only screen and (max-aspect-ratio: 16/9) and (min-aspect-ratio: 4/3),
-       only screen and (hover: none) /*and (pointer: coarse)*/ and (min-aspect-ratio: 4/3){
 
-  .sidebar {
-    min-width: auto;
-    display: flex;
-    .avatar,
-    .socialNetwork {
-      display: none !important;
-    }
+@mixin sidebarPaysageMobile {
+  min-width: auto;
+  display: flex;
 
-    .navigation {
-      width: 100%;
-      padding: .1rem 1rem;
+  .avatar,
+  .socialNetwork {
+    display: none !important;
+  }
 
-      ul {
-        li {
-          padding: 0;
+  .navigation {
+    width: 100%;
+    padding: .1rem 1rem;
+
+    ul {
+      li {
+        padding: 0;
+        display: flex;
+        align-items: center;
+
+        a {
+          i {
+            font-size: 2rem;
+          }
+        }
+
+        span {
+          display: none;
+        }
+
+        &.networks-link {
           display: flex;
-          align-items: center;
-
-          a {
-            i {
-              font-size: 2rem;
-            }
-          }
-
-          span {
-            display: none;
-          }
-
-          &.networks-link {
-            display: flex;
-          }
         }
       }
     }
+  }
+}
+
+// @media only screen /*and (min-aspect-ratio: 16/8)*/ and (max-height:600px) {
+// @media only screen and (hover: none) and (pointer: coarse) and (min-aspect-ratio: 16/8) {
+@media only screen and (max-aspect-ratio: 16/9) and (min-aspect-ratio: 4/3),
+only screen and (hover: none) and (pointer: coarse) and (min-aspect-ratio: 4/3) {
+  .sidebar {
+    @include sidebarPaysageMobile
   }
 }
 
@@ -234,18 +239,18 @@
       padding: .1rem 1rem;
 
       ul {
-        display:flex;
+        display: flex;
         justify-content: space-around !important;
-  
+
         li {
           padding: 1rem 0 !important;
         }
-  
+
         i {
           font-size: 1.4rem !important;
           transform: translateY(-3px) !important;
         }
-  
+
         span {
           display: none;
         }
@@ -264,4 +269,8 @@
   .sidebar {
     height: auto;
   }
+}
+
+.sidebar.samsung {
+  @include sidebarPaysageMobile
 }
