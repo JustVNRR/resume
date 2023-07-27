@@ -8,9 +8,15 @@ const Navigation = () => {
     useEffect(() => {
         window.addEventListener('scroll', isSticky);
 
+        setTimeout(function(){
+
+        console.log("test");
+
         if(document.querySelector('.idContent').clientHeight > document.querySelector('.id').clientHeight){
             document.querySelector('.sidebar').classList.add("samsung");
         }
+        }, 10)
+
 
         return () => {
             window.removeEventListener('scroll', isSticky);
