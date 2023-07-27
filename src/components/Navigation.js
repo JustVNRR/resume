@@ -8,15 +8,12 @@ const Navigation = () => {
     useEffect(() => {
         window.addEventListener('scroll', isSticky);
 
-        setTimeout(function(){
+        // setTimeout(function () {
 
-        console.log("test");
-
-        if(document.querySelector('.idContent').clientHeight > document.querySelector('.id').clientHeight){
-            document.querySelector('.sidebar').classList.add("samsung");
-        }
-        }, 10)
-
+        //     if (document.querySelector('.idContent').clientHeight > document.querySelector('.id').clientHeight) {
+        //         document.querySelector('.sidebar').classList.add("samsung");
+        //     }
+        // }, 10)
 
         return () => {
             window.removeEventListener('scroll', isSticky);
@@ -31,18 +28,18 @@ const Navigation = () => {
 
     useEffect(() => {
 
-       if(height === 0) return;
+        if (height === 0) return;
         document.documentElement.style.setProperty('--sh', `${height}px`);
-        
-      }, [height]);
+
+    }, [height]);
 
     return (
         <div className="sidebar" ref={sideRef}>
             <div className="id">
                 <div className="idContent">
-                <NavLink exact="true" to="/" activeclassname="navActive">
-                    <div className="avatar"></div>
-                </NavLink>
+                    <NavLink exact="true" to="/" activeclassname="navActive">
+                        <div className="avatar"></div>
+                    </NavLink>
                 </div>
             </div>
 
@@ -56,13 +53,13 @@ const Navigation = () => {
                     </li>
                     <li>
                         <NavLink exact="true" to="/competences" activeclassname="navActive">
-                        <i className="fa fa-cogs" aria-hidden="true"></i>
+                            <i className="fa fa-cogs" aria-hidden="true"></i>
                             <span>Compétences</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink exact="true" to="/portfolio" activeclassname="navActive">
-          
+
                             <i className="fas fa-images"></i>
                             <span>Portfolio</span>
                         </NavLink>
@@ -75,7 +72,7 @@ const Navigation = () => {
                     </li>
                     <li className="networks-link">
                         <NavLink exact="true" to="/networks" activeclassname="navActive">
-                        <i className="fas fa-network-wired"></i>
+                            <i className="fas fa-network-wired"></i>
                             <span>Réseaux</span>
                         </NavLink>
                     </li>
