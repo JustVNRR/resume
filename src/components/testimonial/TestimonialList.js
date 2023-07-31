@@ -36,12 +36,12 @@ class TestimonialList extends Component {
         let { testimonials/*, radios, selectedRadio*/ } = this.state;
 
         testimonials.forEach(item => {
-            slides.push( item.affiche ==='oui' &&
+            slides.push(item.affiche === 'oui' &&
                 <SwiperSlide key={`slide-${item.id}`} tag="li">
                     <Testimonial key={item.id} item={item} />
                 </SwiperSlide>)
         });
-        
+
         return (
             <div className="testimonialContent">
                 {/* <ul className="radioDisplay">
@@ -62,30 +62,30 @@ class TestimonialList extends Component {
                         }) 
                     }
                 </ul> */}
-                        <Swiper
-                            id="main"
-                            tag="div"
-                            wrapperTag="ul"
-                            navigation
-                            pagination
-                            spaceBetween={0}
-                            slidesPerView={1}
-                             >
-                            {slides}
-                        </Swiper>
+                <Swiper
+                    id="main"
+                    tag="div"
+                    wrapperTag="ul"
+                    navigation
+                    pagination
+                    spaceBetween={0}
+                    slidesPerView={1}
+                >
+                    {slides}
+                </Swiper>
 
-                        <ul className="list">
-                        {
-                            testimonials
+                <ul className="list">
+                    {
+                        testimonials
                             .map(item => {
                                 return (
-                                    <li>
+                                    <li key={item.id} >
                                         <Testimonial key={item.id} item={item} />
                                     </li>
                                 )
                             })
-                        }
-                        </ul>
+                    }
+                </ul>
             </div>
         );
     }

@@ -70,6 +70,9 @@
         gap: 0.3rem;
         padding-right: 0!important;
         margin-left: 0;
+        margin-top: 0.5rem;
+        height: calc(var(--vh) * 95 - var(--sh)) !important;
+
     }
     .custom-scrollbars__scrollbar {
         display: grid;

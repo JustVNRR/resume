@@ -106,7 +106,7 @@
   @media (max-aspect-ratio: 4/3) {
     .testimonialContent {
       margin-top: 0.5rem !important;
-      height: calc(var(--vh) * 95 - var(--sh)) !important;
+      min-height: calc(var(--vh) * 95 - var(--sh)) !important;
       margin-left: 0;
     }
   }
@@ -115,7 +115,7 @@
 
     .testimonialContent {
       background: none;
-
+      height: auto!important;
       &:after {
         content: '';
         background: none;

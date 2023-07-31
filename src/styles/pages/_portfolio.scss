@@ -252,12 +252,11 @@
 
 @media (max-aspect-ratio: 4/3) {
 
-
   .portfolioContent {
 
     min-height: calc(var(--vh) * 95 - var(--sh));
     overflow: hidden !important;
-    padding-top: 1rem;
+    margin-top:0.5rem;
 
     .radioDisplay {
       box-shadow: none !important;
