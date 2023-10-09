@@ -235,6 +235,15 @@ export const testimonialData = [
   },
   {
     id: 27,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Yanick',
+    date:'29/09/2023',
+    affiche:'oui',
+    langage:'python',
+    text: `Trés bonne écoute, et soucieux du suivi de chaque participant : merci Lionel`   
+  },
+  {
+    id: 28,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
