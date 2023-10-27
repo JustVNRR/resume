@@ -244,6 +244,15 @@ export const testimonialData = [
   },
   {
     id: 28,
+    formation: 'Java SE Initiation + Approfondissement',
+    prenom:'Yannick',
+    date:'23/10/2023',
+    affiche:'oui',
+    langage:'java',
+    text: `Super Formateur A l'écoute de nos problèmes. Un formateur armé de patience pour nous expliquer de différentes manières`   
+  },
+  {
+    id: 29,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
