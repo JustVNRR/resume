@@ -6,13 +6,13 @@ const ProgressBar = (props) => {
             <h3>{props.title}</h3>
             <div className="years">
                 <span> </span>
-                <span>1 an</span>
-                <span>2 ans</span>
+                <span>1.5 an</span>
+                <span>3 ans</span>
             </div>
             <div>
             {
                 props.languages.map((item) =>{
-                    let xpYears = 2;
+                    let xpYears = 3;
                     let progressBar = item.xp/xpYears * 100 + '%';
 
                     return (
