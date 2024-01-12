@@ -202,7 +202,7 @@ export const testimonialData = [
     formation: 'C# Initiation + Approfondissement',
     prenom:'Patrice',
     date:'10/03/2023',
-    affiche:'oui',
+    affiche:'non',
     langage:'c#',
     text: `Excellent formateur, maîtrise le langage C Sharp.`   
   },
@@ -253,6 +253,15 @@ export const testimonialData = [
   },
   {
     id: 29,
+    formation: 'Java SE : Conception objet avancée + Design patterns',
+    prenom:'Pierre-Yves',
+    date:'12/01/2024',
+    affiche:'oui',
+    langage:'java',
+    text: `On sent que Lionel est très compétent dans la programmation, il maitrise et est capable d'illustrer les concepts avec des exemples clairs. Il a clairement répondu à mes questions et a trouvé les problèmes des élèves en un clin d'oeil`   
+  },
+  {
+    id: 30,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
