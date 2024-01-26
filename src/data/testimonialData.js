@@ -262,6 +262,15 @@ export const testimonialData = [
   },
   {
     id: 30,
+    formation: 'C++ : Fondamentaux',
+    prenom:'Juliette',
+    date:'26/01/2024',
+    affiche:'oui',
+    langage:'C++',
+    text: `Très bon formateur qui connait son sujet. Merci à lui.`   
+  },
+  {
+    id: 31,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
