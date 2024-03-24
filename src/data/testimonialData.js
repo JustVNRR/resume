@@ -271,6 +271,33 @@ export const testimonialData = [
   },
   {
     id: 31,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Glen',
+    date:'22/03/2024',
+    affiche:'oui',
+    langage:'Python',
+    text: `Parfait, malgré le retour des allergies saisonnières ! Bon courage à Lionel :-)`   
+  },
+  {
+    id: 32,
+    formation: 'Python Initiation',
+    prenom:'Vincent',
+    date:'20/03/2024',
+    affiche:'oui',
+    langage:'Python',
+    text: `Excellent formateur, qui maitrise parfaitement son sujet.`   
+  },
+  {
+    id: 33,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Pedro',
+    date:'22/03/2024',
+    affiche:'oui',
+    langage:'Python',
+    text: `Très agréable ,disponible, prends le temps de bien expliquer et chercher les problèmes soulevés. Bravo et merci !`   
+  },
+  {
+    id: 34,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
