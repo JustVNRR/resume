@@ -298,6 +298,15 @@ export const testimonialData = [
   },
   {
     id: 34,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Jean-Baptiste',
+    date:'12/07/2024',
+    affiche:'oui',
+    langage:'Python',
+    text: `Lionel a fait preuve d'une maitrise technique parfaite, ainsi que d'une bienveillance sans faille. Il a rèussi a débloquer des points de blocage important. Merci pour ce professionnalisme sans faille.`   
+  },
+  {
+    id: 35,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
