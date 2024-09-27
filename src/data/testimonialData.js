@@ -307,6 +307,15 @@ export const testimonialData = [
   },
   {
     id: 35,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Henry',
+    date:'23/09/2024',
+    affiche:'oui',
+    langage:'Python',
+    text: `Très bon formateur à fait tout sont possible pour s'adapter aux besoins. Bonne pédagogie attentif et très bon niveau technique`   
+  },
+  {
+    id: 36,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
