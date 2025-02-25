@@ -6,7 +6,7 @@ const Experience = () => {
             <h3>Expérience</h3>
             <div className="exp exp-1">
                 <h4>Formateur Développeur - Dawan</h4>
-                <h5> 1 an</h5>
+                <h5> 3 ans</h5>
                 <p>Formations .Net, Java, C++, SQL...</p>
             </div>
             <div className="exp exp-2">

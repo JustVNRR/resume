@@ -316,6 +316,51 @@ export const testimonialData = [
   },
   {
     id: 36,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Franck',
+    date:'29/11/2024',
+    affiche:'oui',
+    langage:'Python',
+    text: `Excellent formateur qui a répondu à la majorité des questions. il a suivi le rythme du groupe.`   
+  },
+  {
+    id: 37,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Henri',
+    date:'29/11/2024',
+    affiche:'oui',
+    langage:'Python',
+    text: `Le formateur tient une posture dynamique dans le cours. Il sait s'adapter aux stagiaires.`   
+  },
+  {
+    id: 38,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Gaspard',
+    date:'29/11/2024',
+    affiche:'non',
+    langage:'Python',
+    text: `Compte tenu des circonstances il fait au mieux avec les moyens dont il dispose. Il est apparu tout à fait compétent dans son domaine et a pris du temps pour régler les bugs dont certaines personnes étaient victimes.`   
+  },
+  {
+    id: 39,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'François',
+    date:'29/11/2024',
+    affiche:'non',
+    langage:'Python',
+    text: `Lionel a été très à l'écoute, avec des explications claires. Il a suivi le programme et nous a sollicité régulièrement.`   
+  },
+  {
+    id: 40,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Olivier',
+    date:'27/11/2024',
+    affiche:'non',
+    langage:'Python',
+    text: `Formateur très disponible.`   
+  },
+  {
+    id: 41,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
