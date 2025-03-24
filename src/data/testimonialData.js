@@ -361,6 +361,24 @@ export const testimonialData = [
   },
   {
     id: 41,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Aurélien',
+    date:'21/03/2025',
+    affiche:'oui',
+    langage:'SQL',
+    text: `Excellent formateur, pédagogue et proposant des exercices en adéquation avec chaque sujet abordé.`   
+  },
+  {
+    id: 42,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Camille',
+    date:'21/03/2025',
+    affiche:'oui',
+    langage:'SQL',
+    text: `Super formateur qui met la pratique en premier plan pour faire rentrer les concepts.`   
+  },
+  {
+    id: 43,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
