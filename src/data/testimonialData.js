@@ -379,6 +379,15 @@ export const testimonialData = [
   },
   {
     id: 43,
+    formation: 'C++ Fondamentaux',
+    prenom:'Gonzague',
+    date:'14/04/2025',
+    affiche:'oui',
+    langage:'c++',
+    text: `Très bonne qualité de communication, le formateur n'hésite pas à demander si l'on a des questions, fournit des réponses détaillées et maîtrise très bien son sujet.`   
+  },
+  {
+    id: 44,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
