@@ -397,6 +397,33 @@ export const testimonialData = [
   },
   {
     id: 45,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Vincent',
+    date:'07/07/2025',
+    affiche:'oui',
+    langage:'python',
+    text: `On voit bien que le formateur est un développeur expérimenté. Cela ne l'empêche pas de se metre à niveau des moins aguerris, mais aussi à répondre à des questions plus complexes posées par apprenant qui ont déjà fait du développement.`   
+  },
+   {
+    id: 46,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Amine',
+    date:'07/07/2025',
+    affiche:'oui',
+    langage:'python',
+    text: `Lionel maîtrise son sujet, il est calme et posé. Il donne envie d’en apprendre davantage grâce à sa très bonne communication et à la clarté de ses explications. J’ai fait du développement il y a très longtemps, et les cours de Lionel m’ont redonné envie de progresser, même si cela a été difficile de se remettre dans le bain.`   
+  },
+   {
+    id: 47,
+    formation: 'Python Initiation + Approfondissement',
+    prenom:'Fabrice',
+    date:'07/07/2025',
+    affiche:'oui',
+    langage:'python',
+    text: `Lionel par sa maîtrise technique nous permettait d'acquérir et d'approfondir les différents concepts de la programmation sous Python. Je tenais à le remercier pour cela notamment.`   
+  },
+  {
+    id: 48,
     prenom:'Jean Jacques',
     date:'20/04/2010',
     affiche:'non',
