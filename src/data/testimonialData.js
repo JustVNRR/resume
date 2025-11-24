@@ -458,8 +458,17 @@ export const testimonialData = [
     langage: 'Python',
     text: `Excellent formateur. Comme dit précédemment, il a su s'adapter à toutes les situations, demandes, questions. Il a réussi un super dosage entre explications, démonstration, manipulation, exercices, complément personnalisé... Même avec un programme aussi dense pendant 5 jours, je n'ai jamais décroché et tout était intéressant. J'ai trouvé cette formation parfaite ! Un grand merci pour tout ce que j'ai appris/compris toute cette semaine :-D`
   },
-  {
+   {
     id: 52,
+    formation: 'SQL Initiation',
+    prenom: 'Enrique',
+    date: '19/11/2025',
+    affiche: 'oui',
+    langage: 'SQL',
+    text: `Le formateur a très bien animé la formation. Les explications étaient claires, structurées et adaptées à un niveau débutant. J’ai particulièrement apprécié la manière progressive d’aborder les requêtes SQL et la pédagogie basée sur la pratique.`
+  },
+  {
+    id: 53,
     prenom: 'Jean Jacques',
     date: '20/04/2010',
     affiche: 'non',
