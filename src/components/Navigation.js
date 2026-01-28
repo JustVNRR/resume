@@ -57,25 +57,25 @@ const Navigation = () => {
                             <span>Compétences</span>
                         </NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                         <NavLink exact="true" to="/portfolio" activeclassname="navActive">
 
                             <i className="fas fa-images"></i>
                             <span>Portfolio</span>
                         </NavLink>
-                    </li>
+                    </li> */}
                     <li>
                         <NavLink exact="true" to="/references" activeclassname="navActive">
                             <i className="fas fa-comments"></i>
                             <span>Témoignages</span>
                         </NavLink>
                     </li>
-                    <li className="networks-link">
+                    {/* <li className="networks-link">
                         <NavLink exact="true" to="/networks" activeclassname="navActive">
                             <i className="fas fa-network-wired"></i>
                             <span>Réseaux</span>
                         </NavLink>
-                    </li>
+                    </li> */}
                     {/* <li>
                         <a href="./media/CV.pdf" target="_blank" rel="noopener noreferer">
                             <i className="fa fa-file-pdf"></i>
@@ -86,7 +86,7 @@ const Navigation = () => {
             </div>
 
             <div className="socialNetwork">
-                <ul>
+                {/* <ul>
                     <li>
                         <a href="https://linkedin.com/in/lionel-b-837660201" target="_blank" rel="noreferrer"><i className="fab fa-linkedin" /></a>
                     </li>
@@ -99,7 +99,7 @@ const Navigation = () => {
                     <li>
                         <a href="https://codepen.io/JustVNRR/pens/public" target="_blank" rel="noreferrer"><i className="fab fa-codepen" /></a>
                     </li>
-                </ul>
+                </ul> */}
                 <div className="signature">
                     <p>Just VNR - {new Date().getFullYear()}</p>
                 </div>
