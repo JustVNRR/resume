@@ -8,7 +8,7 @@ const Experience = () => {
                 <h4>Formateur Développeur - Dawan</h4>
                 <h5> 4 ans</h5>
                 <p>Formations C#, Java, Python, JS, SQL, C++</p>
-                <p>Développement SIRH</p>
+                <p>Développement Spring - React</p>
             </div>
             <div className="exp exp-2">
                 <h4>Ingénieur de recherche - C.N.R.S.</h4>
