@@ -6,8 +6,9 @@ const Experience = () => {
             <h3>Expérience</h3>
             <div className="exp exp-1">
                 <h4>Formateur Développeur - Dawan</h4>
-                <h5> 3 ans</h5>
-                <p>Formations .Net, Java, C++, SQL...</p>
+                <h5> 4 ans</h5>
+                <p>Formations C#, Java, Python, JS, SQL, C++</p>
+                <p>Développement SIRH</p>
             </div>
             <div className="exp exp-2">
                 <h4>Ingénieur de recherche - C.N.R.S.</h4>
