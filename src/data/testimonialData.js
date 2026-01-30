@@ -467,8 +467,17 @@ export const testimonialData = [
     langage: 'SQL',
     text: `Le formateur a très bien animé la formation. Les explications étaient claires, structurées et adaptées à un niveau débutant. J’ai particulièrement apprécié la manière progressive d’aborder les requêtes SQL et la pédagogie basée sur la pratique.`
   },
-  {
+   {
     id: 53,
+    formation: 'Python Initiation',
+    prenom: 'Simon',
+    date: '28/01/2026',
+    affiche: 'oui',
+    langage: 'Python',
+    text: `Formateur précis et pédagogue Disponible et patient`
+  },
+  {
+    id: 54,
     prenom: 'Jean Jacques',
     date: '20/04/2010',
     affiche: 'non',
